@@ -1,0 +1,12 @@
+# Netlify CLI link state (site id, local only)
+.netlify/
+
+# Generated copy of the pages uploaded to Netlify
+deploy/
+
+# Local editor / preview tooling
+.claude/
+
+# OS clutter
+Thumbs.db
+.DS_Store

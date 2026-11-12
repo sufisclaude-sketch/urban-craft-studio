@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ar. Yusuf Shaikh — Principal Architect | Urban Craft Studio</title>
+
+<!-- ============ SEO / SOCIAL (DUMMY content — update before launch) ============ -->
+<meta name="description" content="Ar. Yusuf Shaikh, Founder & Principal Architect of Urban Craft Studio, Pune. Contextual, light-filled architecture — from the first honest line to the handover of keys.">
+<meta name="author" content="Urban Craft Studio">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Ar. Yusuf Shaikh — Principal Architect, Urban Craft Studio">
+<meta property="og:description" content="A personal monograph: journey, philosophy and work of Ar. Yusuf Shaikh — light first, honest materials second.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&q=80&auto=format&fit=crop">
+<meta property="og:site_name" content="Urban Craft Studio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1A1A1A">
+
+<!-- Inline SVG "UCS" favicon (same as index.html) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231A1A1A'/%3E%3Crect x='6' y='6' width='52' height='52' fill='none' stroke='%23C2643C' stroke-width='2'/%3E%3Ctext x='32' y='41' font-family='Georgia,serif' font-size='21' letter-spacing='1' fill='%23EDEAE4' text-anchor='middle'%3EUCS%3C/text%3E%3C/svg%3E">
+
+<!-- ============ FONTS (same set as index.html) ============ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   AR. YUSUF SHAIKH — "The Monograph"  (companion page to index.html)
+   Shares the Urban Craft Studio design system: concrete / ink / terracotta / brass
+   ========================================================================== */
+:root{
+  --paper:#EDEAE4;
+  --paper-2:#E4E0D8;
+  --ink:#1A1A1A;
+  --ink-2:#242320;
+  --ink-soft:rgba(26, 26, 26, .62);
+  --terracotta:#C2643C;          /* display text, fills, lines, buttons, cursor bubble */
+  --terracotta-text:#9E4925;     /* small terracotta text on light bg (AA ≥4.5:1) */
+  --terracotta-on-dark:#D9784E;  /* small terracotta text on dark bg (AA ≥4.5:1) */
+  --brass:#B08D57;
+  --brass-light:#D9BD84;
+  --brass-lighter:#E7D3A4;
+  --brass-dark:#8A6B3F;
+  --brass-darker:#7D5F36;
+  --brass-text:#EFE3C2;
+  --brass-muted:#D9C9A6;
+  --line:rgba(26, 26, 26, .14);
+  --line-strong:rgba(26, 26, 26, .32);
+  /* opacity steps of the core colours */
+  --paper-a04:rgba(237, 234, 228, .04);
+  --paper-a05:rgba(237, 234, 228, .05);
+  --paper-a06:rgba(237, 234, 228, .06);
+  --paper-a12:rgba(237, 234, 228, .12);
+  --paper-a14:rgba(237, 234, 228, .14);
+  --paper-a16:rgba(237, 234, 228, .16);
+  --paper-a25:rgba(237, 234, 228, .25);
+  --paper-a28:rgba(237, 234, 228, .28);
+  --paper-a40:rgba(237, 234, 228, .4);
+  --paper-a45:rgba(237, 234, 228, .45);
+  --paper-a50:rgba(237, 234, 228, .5);
+  --paper-a55:rgba(237, 234, 228, .55);
+  --paper-a60:rgba(237, 234, 228, .6);
+  --paper-a65:rgba(237, 234, 228, .65);
+  --paper-a70:rgba(237, 234, 228, .7);
+  --paper-a75:rgba(237, 234, 228, .75);
+  --paper-a80:rgba(237, 234, 228, .8);
+  --paper-a88:rgba(237, 234, 228, .88);
+  --ink-a035:rgba(26, 26, 26, .035);
+  --ink-a05:rgba(26, 26, 26, .05);
+  --ink-a18:rgba(26, 26, 26, .18);
+  --ink-a45:rgba(26, 26, 26, .45);
+  --ink-a50:rgba(26, 26, 26, .5);
+  --ink-a55:rgba(26, 26, 26, .55);
+  --ink-a60:rgba(26, 26, 26, .6);
+  --ink-a65:rgba(26, 26, 26, .65);
+  --ink-a72:rgba(26, 26, 26, .72);
+  --ink-a78:rgba(26, 26, 26, .78);
+  --ink-a94:rgba(26, 26, 26, .94);
+  /* type scale */
+  --fs-h1:clamp(3.625rem, 12.5vw, 11.25rem);
+  --fs-h2:clamp(2.125rem, 5.4vw, 4.5rem);
+  --fs-h3:clamp(1.25rem, 1.6vw, 1.5rem);
+  --fs-body:1rem;
+  --fs-small:.875rem;
+  --fs-mono:.6875rem;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --gutter:clamp(20px,4vw,72px);
+  --ease-out:cubic-bezier(.22,1,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+html.js.has-cursor, html.js.has-cursor *{cursor:none !important}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-weight:400;font-size:var(--fs-body);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-x:clip;
+  background-image:
+    linear-gradient(var(--ink-a035) 1px,transparent 1px),
+    linear-gradient(90deg,var(--ink-a035) 1px,transparent 1px);
+  background-size:72px 72px;
+}
+img{display:block;max-width:100%}
+h1,h2,h3{text-wrap:balance}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none}
+::selection{background:var(--terracotta);color:var(--paper)}
+:focus-visible{outline:2px solid var(--terracotta);outline-offset:3px}
+.mono{font-family:var(--mono);font-size:var(--fs-mono);letter-spacing:.14em;text-transform:uppercase}
+.container{padding-left:var(--gutter);padding-right:var(--gutter);max-width:1680px;margin:0 auto}
+.skip-link{position:fixed;top:-60px;left:16px;z-index:9999;background:var(--ink);color:var(--paper);padding:10px 18px;transition:top .2s}
+.skip-link:focus{top:12px}
+
+/* paper-grain noise overlay */
+.grain{position:fixed;inset:0;z-index:4;pointer-events:none;opacity:.55;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+/* column guides */
+.guides{position:fixed;inset:0;z-index:1;pointer-events:none;display:flex;padding:0 var(--gutter);opacity:.5}
+.guides span{flex:1;border-left:1px solid var(--ink-a05)}
+.guides span:last-child{border-right:1px solid var(--ink-a05)}
+
+/* ==========================================================================
+   PRELOADER — arch elevation draws itself
+   ========================================================================== */
+.preloader{position:fixed;inset:0;z-index:300;background:var(--ink);color:var(--paper);display:block;
+  background-image:linear-gradient(var(--paper-a05) 1px,transparent 1px),linear-gradient(90deg,var(--paper-a05) 1px,transparent 1px);
+  background-size:56px 56px}
+.pl-center{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:26px;padding:24px}
+.pl-plan{width:min(420px,78vw);height:auto;overflow:visible}
+.pl-plan path{fill:none;stroke:var(--paper);stroke-width:1.1;vector-effect:non-scaling-stroke}
+.pl-plan .pl-accent{stroke:var(--terracotta)}
+.pl-plan text{font-family:var(--mono);font-size:9px;letter-spacing:.22em;fill:var(--paper-a65);opacity:0}
+.pl-tag{font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:var(--paper-a55);text-transform:uppercase}
+.pl-count{position:absolute;right:clamp(20px,5vw,64px);bottom:clamp(18px,4vw,48px);font-family:var(--mono);font-size:clamp(40px,8vw,88px);font-weight:500;color:var(--terracotta);line-height:1}
+
+/* ==========================================================================
+   PAGE TRANSITION WIPE  (terracotta panel + sliding name)
+   ========================================================================== */
+.wipe{position:fixed;inset:0;z-index:500;visibility:hidden;pointer-events:none}
+.wipe.on{visibility:visible;pointer-events:auto}
+.wipe-panel{position:absolute;inset:0;background:var(--terracotta);transform:translateY(101%);
+  background-image:linear-gradient(var(--paper-a06) 1px,transparent 1px),linear-gradient(90deg,var(--paper-a06) 1px,transparent 1px);
+  background-size:56px 56px}
+.wipe-name{position:absolute;inset:0;display:grid;place-items:center;overflow:hidden}
+.wipe-name span{font-family:var(--serif);font-weight:500;font-style:italic;color:var(--paper);font-size:clamp(28px,6vw,72px);letter-spacing:.02em;white-space:nowrap;opacity:0}
+
+/* ==========================================================================
+   CURSOR — crosshair + coords + contextual labels (VIEW / DRAG / READ)
+   ========================================================================== */
+.cursor-layer{position:fixed;inset:0;z-index:290;pointer-events:none;display:none}
+html.has-cursor .cursor-layer{display:block}
+.ch-x,.ch-y{position:absolute;background:var(--ink-a18)}
+.ch-x{left:0;right:0;height:1px;top:0}
+.ch-y{top:0;bottom:0;width:1px;left:0}
+.cursor-dot{position:absolute;top:0;left:0;width:10px;height:10px;margin:-5px 0 0 -5px;border:1px solid var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 0 1px rgba(0,0,0,.6));transition:width .3s var(--ease-out),height .3s var(--ease-out),margin .3s var(--ease-out),background-color .3s,border-color .2s}
+.cursor-label{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--paper);opacity:0;transition:opacity .2s}
+.cursor-coords{position:absolute;top:14px;left:16px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--ink-soft);white-space:nowrap}
+.cursor-layer.is-active .cursor-dot{width:68px;height:68px;margin:-34px 0 0 -34px;background:var(--terracotta);border-color:var(--terracotta)}
+.cursor-layer.is-active .cursor-label{opacity:1}
+.cursor-layer.is-active .ch-x,.cursor-layer.is-active .ch-y,.cursor-layer.is-active .cursor-coords{opacity:0}
+.ch-x,.ch-y{transition:opacity .25s,background-color .2s}
+.cursor-coords{transition:opacity .25s,color .2s}
+/* light cursor while over dark sections ([data-cursor-theme="light"]) */
+.cursor-layer.on-dark .ch-x,.cursor-layer.on-dark .ch-y{background:var(--paper-a28)}
+.cursor-layer.on-dark:not(.is-view):not(.is-active) .cursor-dot{border-color:var(--paper)}
+.cursor-layer.on-dark .cursor-coords{color:var(--paper-a75)}
+
+/* ==========================================================================
+   NAV (same shell as index.html)
+   ========================================================================== */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:18px var(--gutter);transition:background .4s,box-shadow .4s;transform:translateZ(0)}
+.site-nav.scrolled{background:var(--paper-a88);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav-brand{display:flex;align-items:center;gap:12px}
+.nav-mark{width:38px;height:38px;border:1.5px solid var(--ink);display:grid;place-items:center;font-family:var(--serif);font-weight:600;font-size:13px;letter-spacing:.06em}
+.nav-name{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;line-height:1.5}
+.nav-name small{display:block;color:var(--ink-soft);font-size:9px;letter-spacing:.2em}
+.nav-links{display:flex;gap:clamp(16px,2.6vw,40px);list-style:none}
+.nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;position:relative;padding:6px 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--terracotta);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease-out)}
+.nav-links a:hover::after,.nav-links a:focus-visible::after{transform:scaleX(1);transform-origin:left}
+.nav-links a[aria-current="page"]::after{transform:scaleX(1)}
+.nav-burger{display:none;flex-direction:column;gap:5px;padding:10px;margin:-10px}
+.nav-burger i{display:block;width:26px;height:1.5px;background:var(--ink)}
+@media(max-width:860px){.nav-links{display:none}.nav-burger{display:flex}}
+.mobile-menu{position:fixed;inset:0;z-index:260;background:var(--ink);color:var(--paper);display:flex;flex-direction:column;justify-content:center;padding:0 var(--gutter);clip-path:inset(0 0 100% 0);visibility:hidden;transition:clip-path .6s var(--ease-out),visibility 0s .6s;
+  background-image:linear-gradient(var(--paper-a05) 1px,transparent 1px),linear-gradient(90deg,var(--paper-a05) 1px,transparent 1px);background-size:56px 56px}
+.mobile-menu.open{clip-path:inset(0 0 0% 0);visibility:visible;transition:clip-path .6s var(--ease-out)}
+.mobile-menu a{font-family:var(--serif);font-size:clamp(30px,8vw,52px);font-weight:400;line-height:1.35;border-bottom:1px solid var(--paper-a12);padding:10px 0;display:flex;align-items:baseline;gap:16px}
+.mobile-menu a .mono{color:var(--terracotta);font-size:10px}
+.mm-close{position:absolute;top:20px;right:var(--gutter);font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--paper);padding:12px}
+
+/* fixed UI: scale-bar progress + section ticker */
+.scalebar{position:fixed;left:var(--gutter);bottom:22px;z-index:120;width:170px;pointer-events:none}
+.scalebar .sb-track{height:5px;border:1px solid var(--line-strong);position:relative;background:
+  repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),var(--line-strong) calc(25% - 1px) 25%)}
+.scalebar .sb-track i{position:absolute;inset:1px auto 1px 1px;width:calc(100% - 2px);background:var(--terracotta);transform:scaleX(0);transform-origin:left}
+.scalebar .sb-labels{display:flex;justify-content:space-between;font-family:var(--mono);font-size:8px;letter-spacing:.12em;color:var(--ink-soft);margin-top:5px}
+.sec-ticker{position:fixed;right:var(--gutter);bottom:22px;z-index:120;font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--ink-soft);text-transform:uppercase;pointer-events:none;text-align:right}
+.sec-ticker b{color:var(--terracotta);font-weight:500}
+@media(max-width:700px){.scalebar,.sec-ticker{display:none}}
+
+/* ==========================================================================
+   SECTION SCAFFOLD
+   ========================================================================== */
+section{position:relative;z-index:2}
+.section-pad{padding:clamp(80px,14vh,160px) 0}
+.sec-head{display:flex;align-items:baseline;gap:22px;margin-bottom:clamp(36px,6vh,72px)}
+.sec-index{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--terracotta);white-space:nowrap}
+.sec-title{font-family:var(--serif);font-weight:500;font-size:var(--fs-h2);line-height:1.05;letter-spacing:-.01em}
+.sec-title .line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.sec-rule{flex:1;height:1px;background:var(--line);align-self:center;min-width:40px}
+.sec-note{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--ink-soft);white-space:nowrap}
+@media(max-width:700px){.sec-rule,.sec-note{display:none}}
+
+/* ==========================================================================
+   01 · HERO — name, arched portrait, 3D arcade
+   ========================================================================== */
+.a-hero{min-height:100svh;display:flex;align-items:center;overflow:clip;padding-top:90px}
+.a-hero-canvas{position:absolute;inset:0;z-index:0;opacity:.5}
+.a-hero-canvas canvas{display:block}
+.a-hero-svg{position:absolute;right:-4%;bottom:-6%;width:min(560px,70vw);opacity:.12;z-index:0}
+.a-hero-svg path{fill:none;stroke:var(--ink);stroke-width:1.2}
+.a-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,5vw,90px);align-items:center;width:100%;position:relative;z-index:2}
+.a-eyebrow{color:var(--ink-soft);display:flex;align-items:center;gap:14px;margin-bottom:clamp(18px,3vh,30px);flex-wrap:wrap}
+.a-eyebrow::before{content:"";width:48px;height:1px;background:var(--terracotta)}
+.a-name{font-family:var(--serif);font-weight:500;font-size:var(--fs-h1);line-height:.95;letter-spacing:-.015em;text-transform:uppercase;perspective:900px}
+.a-name .line{display:block;overflow:hidden;padding-bottom:.05em;margin-bottom:-.05em}
+.a-name .word{display:inline-block;will-change:transform;transform-origin:bottom center}
+.a-name .line:nth-child(2) .word{color:var(--terracotta);margin-left:clamp(20px,6vw,110px)}
+.a-role{margin-top:clamp(18px,3vh,30px);font-size:clamp(15px,1.3vw,18px);font-weight:500;color:var(--ink-soft);max-width:460px}
+.a-words{margin-top:clamp(20px,3.5vh,36px);font-family:var(--mono);font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:14px}
+.a-words::before{content:"";width:26px;height:1px;background:var(--brass)}
+.a-words b{color:var(--terracotta);font-weight:500;min-width:11ch;display:inline-block}
+/* arched portrait */
+.a-portrait{position:relative;justify-self:center;width:min(360px,74vw)}
+.a-tilt{position:relative;transform-style:preserve-3d;will-change:transform}
+.arch-frame{position:relative;overflow:hidden;border-radius:999px 999px 14px 14px;aspect-ratio:3/4.1;background:var(--paper-2);box-shadow:0 30px 60px -30px var(--ink-a45);transform:translateZ(40px)}
+.arch-frame img{width:100%;height:100%;object-fit:cover}
+.arch-sheen{position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,var(--paper-a28) 46%,transparent 60%);transform:translateX(-120%);pointer-events:none}
+.arch-line{position:absolute;inset:12px;border:1px solid var(--paper-a60);border-radius:999px 999px 8px 8px;pointer-events:none;transform:translateZ(58px)}
+.arch-grid{position:absolute;inset:-26px;border:1px solid var(--line);border-radius:999px 999px 18px 18px;pointer-events:none;transform:translateZ(-50px);
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:36px 36px;opacity:.5}
+.a-portrait-tag{position:absolute;left:-14px;bottom:26px;background:var(--ink);color:var(--paper);padding:12px 16px;transform:translateZ(70px)}
+.a-portrait-tag span{font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--brass);text-transform:uppercase;display:block}
+.a-portrait-tag strong{font-family:var(--serif);font-weight:500;font-size:15px}
+.a-portrait-cap{margin-top:14px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase;display:flex;justify-content:space-between;gap:10px}
+.a-scroll{position:absolute;left:var(--gutter);bottom:26px;color:var(--ink-soft);display:flex;align-items:center;gap:12px;z-index:2}
+.hs-line{display:inline-block;width:70px;height:1px;background:var(--line-strong);position:relative;overflow:hidden}
+.hs-line::after{content:"";position:absolute;inset:0;background:var(--terracotta);transform:translateX(-100%);animation:hsline 2.2s var(--ease-out) infinite}
+@keyframes hsline{40%{transform:translateX(0)}100%{transform:translateX(100%)}}
+@media(max-width:900px){
+  .a-hero-grid{grid-template-columns:1fr;gap:44px}
+  .a-portrait{justify-self:start}
+  .a-hero{padding-top:110px;padding-bottom:70px}
+}
+
+/* ==========================================================================
+   02 · BIO — pull-quote scrub + annotated paragraphs
+   ========================================================================== */
+.a-quote{font-family:var(--serif);font-weight:300;font-size:clamp(24px,3.4vw,46px);line-height:1.38;letter-spacing:-.005em;max-width:1000px}
+.a-quote .w{display:inline-block}
+.a-quote em{font-style:italic;color:var(--terracotta)}
+.bio-grid{display:grid;grid-template-columns:200px 1fr;gap:clamp(24px,4vw,70px);margin-top:clamp(40px,7vh,80px)}
+.bio-annos{position:relative}
+.bio-anno{position:sticky;top:130px;margin-bottom:60px;font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--terracotta);text-transform:uppercase}
+.bio-anno i{display:block;width:60px;height:1px;background:var(--brass);margin-top:8px;transform:scaleX(0);transform-origin:left}
+.bio-copy p{font-size:clamp(15px,1.25vw,18px);color:var(--ink);max-width:680px;margin-bottom:1.5em}
+.bio-copy p:first-child::first-letter{font-family:var(--serif);font-size:3.1em;line-height:.8;float:left;padding:6px 10px 0 0;color:var(--terracotta)}
+@media(max-width:760px){.bio-grid{grid-template-columns:1fr}.bio-annos{display:flex;gap:26px}.bio-anno{position:static;margin:0}}
+
+/* ==========================================================================
+   03 · JOURNEY — pinned 3D timeline track
+   ========================================================================== */
+.journey{background:var(--ink);color:var(--paper);overflow:hidden;
+  background-image:linear-gradient(var(--paper-a04) 1px,transparent 1px),linear-gradient(90deg,var(--paper-a04) 1px,transparent 1px);background-size:72px 72px}
+.journey .sec-title{color:var(--paper)}
+.journey .sec-rule{background:var(--paper-a14)}
+.journey .sec-note{color:var(--paper-a50)}
+.j-year{position:absolute;top:clamp(86px,12vh,130px);right:var(--gutter);font-family:var(--mono);font-size:clamp(34px,5vw,64px);color:var(--paper-a16);line-height:1;z-index:1}
+.j-persp{perspective:1500px;perspective-origin:50% 20%;flex:1;display:flex;align-items:center;overflow:visible}
+.j-plane{transform:rotateX(50deg);transform-style:preserve-3d;width:100%}
+.j-track{display:flex;gap:clamp(60px,7vw,120px);padding:0 45vw 0 var(--gutter);transform-style:preserve-3d;will-change:transform;position:relative}
+.j-rail{position:absolute;left:0;right:0;bottom:-34px;height:2px;background:var(--paper-a14)}
+.j-rail i{position:absolute;inset:0;background:var(--terracotta);transform:scaleX(0);transform-origin:left}
+.j-card{flex:0 0 auto;width:min(300px,72vw);transform:rotateX(-18deg) translateZ(-40px);transform-origin:bottom center;transform-style:preserve-3d;opacity:.4;transition:transform .7s var(--ease-out),opacity .5s}
+.j-card.active{transform:rotateX(-50deg) translateZ(26px);opacity:1}
+.j-card .mono{color:var(--terracotta);display:block;margin-bottom:10px}
+.j-card h3{font-family:var(--serif);font-weight:500;font-size:var(--fs-h3);line-height:1.2;margin-bottom:8px}
+.j-card p{font-size:13px;color:var(--paper-a60);margin-bottom:14px;min-height:2.6em}
+.j-media{overflow:hidden;aspect-ratio:16/10;background:var(--paper-a06)}
+.j-media img{width:100%;height:100%;object-fit:cover;filter:grayscale(.4);transition:filter .5s}
+.j-card.active .j-media img{filter:grayscale(0)}
+.j-dot{position:absolute;left:50%;bottom:-40px;width:11px;height:11px;margin-left:-6px;border-radius:50%;border:1px solid var(--terracotta);background:var(--ink)}
+.j-card.active .j-dot{background:var(--terracotta)}
+/* stacked fallback (mobile / reduced motion) */
+.journey.flat .j-persp{perspective:none;display:block}
+.journey.flat .j-plane{transform:none}
+.journey.flat .j-track{flex-direction:column;gap:56px;padding:0 var(--gutter);transform:none !important}
+.journey.flat .j-card{transform:none;opacity:1;width:100%;max-width:460px}
+.journey.flat .j-rail,.journey.flat .j-dot{display:none}
+.journey.flat .j-year{display:none}
+
+/* ==========================================================================
+   04 · ACHIEVEMENTS — brass plaques (3D flip) + stats
+   ========================================================================== */
+.plaque-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:clamp(16px,2vw,28px);perspective:1400px}
+.plaque{position:relative;aspect-ratio:7/5;perspective:1000px;text-align:left;border-radius:6px}
+.plaque-inner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .8s var(--ease-out)}
+.plaque:hover .plaque-inner,.plaque:focus-visible .plaque-inner,.plaque.flipped .plaque-inner{transform:rotateY(180deg)}
+.plaque-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:6px;padding:2px;background:linear-gradient(135deg,var(--brass-light),var(--brass-dark) 35%,var(--brass-lighter) 60%,var(--brass-darker));box-shadow:0 18px 36px -18px var(--ink-a50)}
+.plaque-face>div{height:100%;border-radius:4px;background:linear-gradient(160deg,var(--ink-2),var(--ink));color:var(--brass-muted);padding:clamp(16px,1.8vw,26px);display:flex;flex-direction:column;justify-content:space-between}
+.plaque-back{transform:rotateY(180deg)}
+.plaque .mono{color:var(--brass);font-size:9px}
+.plaque h3{font-family:var(--serif);font-weight:500;font-size:var(--fs-h3);line-height:1.2;color:var(--brass-text);text-shadow:0 1px 0 rgba(0,0,0,.6),0 -1px 0 rgba(255,255,255,.07)}
+.plaque p{font-size:12.5px;line-height:1.55;color:rgba(233,220,188,.75)}
+.plaque .flip-hint{font-family:var(--mono);font-size:8px;letter-spacing:.18em;color:rgba(233,220,188,.45);text-transform:uppercase}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:clamp(44px,7vh,80px)}
+.stat{background:var(--paper);padding:clamp(24px,4vh,44px) clamp(16px,2vw,36px)}
+.stat b{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4vw,56px);line-height:1;display:block}
+.stat b em{font-style:normal;color:var(--terracotta)}
+.stat > span{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);display:block;margin-top:12px}
+@media(max-width:760px){.stats-row{grid-template-columns:repeat(2,1fr)}}
+
+/* ==========================================================================
+   05 · PHILOSOPHY — three pillars, one continuous line
+   ========================================================================== */
+.philosophy{background:var(--paper-2)}
+.pillars{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,56px)}
+.pillar-link{position:absolute;top:44px;left:0;width:100%;height:2px;z-index:0;overflow:visible}
+.pillar-link path{fill:none;stroke:var(--terracotta);stroke-width:1.5}
+.pillar{position:relative;z-index:1;text-align:left}
+.pillar-icon{width:88px;height:88px;border:1px solid var(--line-strong);border-radius:50%;background:var(--paper);display:grid;place-items:center;margin-bottom:22px}
+.pillar-icon svg{width:40px;height:40px;overflow:visible}
+.pillar-icon svg *{fill:none;stroke:var(--ink);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.pillar h3{font-family:var(--serif);font-weight:500;font-size:var(--fs-h3);line-height:1.2;margin-bottom:10px}
+.pillar h3 i{font-style:normal;color:var(--terracotta);font-family:var(--mono);font-size:11px;vertical-align:super;margin-right:8px}
+.pillar p{font-size:15px;color:var(--ink-soft);max-width:300px}
+@media(max-width:760px){.pillars{grid-template-columns:1fr;gap:44px}.pillar-link{display:none}}
+
+/* ==========================================================================
+   06 · GALLERY — "Through the Lens" cylindrical carousel + lightbox
+   ========================================================================== */
+.lens{overflow:hidden}
+.lens-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.lf-btn{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line-strong);padding:9px 18px;border-radius:999px;transition:background .3s,color .3s,border-color .3s}
+.lf-btn:hover{border-color:var(--ink)}
+.lf-btn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.cyl-stage{position:relative;height:clamp(440px,74vh,640px);perspective:1700px;touch-action:pan-y}
+.cyl-ring{position:absolute;left:50%;top:50%;transform-style:preserve-3d;will-change:transform}
+.cyl-item{position:absolute;left:0;top:0;width:var(--cw,260px);transform-style:preserve-3d;padding:0;text-align:left}
+.cyl-item figure{overflow:hidden;background:var(--paper-2);box-shadow:0 24px 44px -24px var(--ink-a50);will-change:transform,opacity}
+.cyl-item img{width:100%;aspect-ratio:4/5;object-fit:cover;pointer-events:none}
+.cyl-item figcaption{font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase;padding:8px 2px 0;background:none}
+.cyl-hint{text-align:center;font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--ink-soft);text-transform:uppercase;margin-top:6px}
+.cyl-nav{display:flex;justify-content:center;gap:12px;margin-top:18px}
+.cyl-btn{width:52px;height:52px;border:1px solid var(--line-strong);border-radius:50%;display:grid;place-items:center;font-family:var(--mono);font-size:15px;transition:background .3s,color .3s}
+.cyl-btn:hover{background:var(--ink);color:var(--paper)}
+/* deck (mobile fallback) */
+.deck-stage{position:relative;height:clamp(420px,64vh,560px);perspective:1100px;touch-action:pan-y}
+.deck-card{position:absolute;left:50%;top:50%;width:min(300px,78vw);transform-style:preserve-3d;will-change:transform;padding:0;text-align:left}
+.deck-card figure{overflow:hidden;background:var(--paper-2);box-shadow:0 26px 46px -22px var(--ink-a55)}
+.deck-card img{width:100%;aspect-ratio:4/5;object-fit:cover;pointer-events:none}
+.deck-card figcaption{font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase;padding:8px 2px 0}
+.deck-count{text-align:center;font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--ink-soft);margin-top:12px}
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:320;background:var(--ink-a94);visibility:hidden;opacity:0;transition:opacity .4s,visibility 0s .4s;display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,60px)}
+.lb.open{visibility:visible;opacity:1;transition:opacity .4s}
+.lb img{max-width:min(1100px,92vw);max-height:78vh;object-fit:contain;box-shadow:0 40px 80px -30px rgba(0,0,0,.7)}
+.lb-cap{position:absolute;bottom:clamp(18px,4vh,40px);left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--paper-a75);text-transform:uppercase;text-align:center;max-width:90vw}
+.lb-close{position:absolute;top:18px;right:18px;width:52px;height:52px;border:1px solid var(--paper-a40);border-radius:50%;color:var(--paper);display:grid;place-items:center;font-family:var(--mono);transition:background .3s,transform .3s}
+.lb-close:hover{background:var(--terracotta);transform:rotate(90deg)}
+.lb-arrow{position:absolute;top:50%;transform:translateY(-50%);width:56px;height:56px;border:1px solid var(--paper-a40);border-radius:50%;color:var(--paper);display:grid;place-items:center;font-family:var(--mono);font-size:16px;transition:background .3s}
+.lb-arrow:hover{background:var(--terracotta)}
+.lb-prev{left:18px}.lb-next{right:18px}
+@media(max-width:700px){.lb-arrow{top:auto;bottom:70px;transform:none}}
+
+/* ==========================================================================
+   07 · TESTIMONIALS — 3D card stack
+   ========================================================================== */
+.testi{background:var(--ink);color:var(--paper);overflow:hidden;
+  background-image:linear-gradient(var(--paper-a04) 1px,transparent 1px),linear-gradient(90deg,var(--paper-a04) 1px,transparent 1px);background-size:72px 72px}
+.testi .sec-title{color:var(--paper)}
+.testi .sec-rule{background:var(--paper-a14)}
+.testi .sec-note{color:var(--paper-a50)}
+.testi-wrap{position:relative;max-width:760px;margin:0 auto}
+.testi-mark{position:absolute;top:-70px;left:-40px;font-family:var(--serif);font-size:clamp(140px,22vw,300px);line-height:1;color:rgba(194,100,60,.22);pointer-events:none;user-select:none;z-index:0}
+.testi-stage{position:relative;height:clamp(340px,46vh,420px);perspective:1200px;z-index:1}
+.t-card{position:absolute;inset:0;background:var(--paper);color:var(--ink);padding:clamp(24px,3.5vw,44px);display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 30px 60px -28px rgba(0,0,0,.6);will-change:transform;transform-style:preserve-3d;border-top:3px solid var(--terracotta)}
+.t-card blockquote{font-family:var(--serif);font-weight:300;font-style:italic;font-size:clamp(17px,1.9vw,24px);line-height:1.5}
+.t-meta{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-top:18px}
+.t-meta strong{font-family:var(--serif);font-weight:500;font-size:16px;display:block}
+.t-meta span{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--ink-soft);text-transform:uppercase}
+.t-meta .t-sample{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ink);background:var(--paper);border:1px solid var(--terracotta);padding:4px 8px;text-transform:uppercase;white-space:nowrap}
+.testi-hint{text-align:center;font-family:var(--mono);font-size:9px;letter-spacing:.2em;color:var(--paper-a45);text-transform:uppercase;margin-top:22px}
+
+/* ==========================================================================
+   08 · WORKS BY YUSUF — compact strip
+   ========================================================================== */
+.wstrip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:clamp(14px,1.8vw,24px)}
+.ws-card{display:block;position:relative}
+.ws-media{overflow:hidden;aspect-ratio:4/3;background:var(--paper-2)}
+.ws-media img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease-out)}
+.ws-card:hover img,.ws-card:focus-visible img{transform:scale(1.06)}
+.ws-card h3{font-family:var(--serif);font-weight:500;font-size:var(--fs-h3);line-height:1.2;margin-top:10px}
+.ws-card .mono{color:var(--ink-soft);font-size:9px}
+.wstrip-more{margin-top:34px}
+
+/* ==========================================================================
+   09 · CTA / FOOTER
+   ========================================================================== */
+.cta{background:var(--ink);color:var(--paper);
+  background-image:linear-gradient(var(--paper-a04) 1px,transparent 1px),linear-gradient(90deg,var(--paper-a04) 1px,transparent 1px);background-size:72px 72px}
+.cta-title{font-family:var(--serif);font-weight:500;font-size:clamp(40px,8vw,120px);line-height:1.02;letter-spacing:-.01em;max-width:1000px}
+.cta-title em{font-style:italic;color:var(--terracotta)}
+.cta-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:clamp(30px,5vh,56px);align-items:center}
+.btn{display:inline-flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--paper-a40);padding:18px 34px;border-radius:999px;position:relative;overflow:hidden;transition:color .35s,border-color .35s;color:var(--paper)}
+.btn::before{content:"";position:absolute;inset:0;background:var(--terracotta);transform:translateY(101%);transition:transform .45s var(--ease-out);border-radius:inherit}
+.btn:hover::before,.btn:focus-visible::before{transform:translateY(0)}
+.btn span{position:relative;z-index:1}
+.btn:hover{border-color:var(--terracotta)}
+.cta-mail{font-family:var(--serif);font-size:clamp(17px,1.8vw,24px);color:var(--paper);padding:0}
+.cta-mail:hover{color:var(--brass)}
+.cta-sub{font-size:12px;color:var(--paper-a50);margin-top:4px}
+.footer-bar{border-top:1px solid var(--paper-a14);margin-top:clamp(50px,9vh,90px);padding-top:26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--paper-a45);text-transform:uppercase}
+.footer-bar a{color:var(--paper-a70)}
+.footer-bar a:hover{color:var(--terracotta)}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:34px;visibility:hidden;transform:translate(-50%,calc(100% + 44px));background:var(--terracotta);color:var(--paper);font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:13px 26px;border-radius:999px;z-index:400;transition:transform .45s var(--ease-out),visibility 0s .45s;pointer-events:none}
+.toast.show{visibility:visible;transform:translate(-50%,0);transition:transform .45s var(--ease-out)}
+
+/* ==========================================================================
+   WCAG AA — darker terracotta for small text on light, lighter on dark
+   ========================================================================== */
+.sec-index,.sec-ticker b,.a-words b,.bio-anno,.pillar h3 i{color:var(--terracotta-text)}
+.journey .sec-index,.testi .sec-index,.j-card .mono,.mobile-menu a .mono,.footer-bar a:hover{color:var(--terracotta-on-dark)}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  .hs-line::after{animation:none}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="grain" aria-hidden="true"></div>
+<div class="guides" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- ============================ PRELOADER (arch elevation) ============================ -->
+<div class="preloader" id="preloader" aria-hidden="true" data-cursor-theme="light">
+  <div class="pl-center">
+    <svg class="pl-plan" viewBox="0 0 400 260" aria-hidden="true">
+      <!-- arcade elevation: three arches -->
+      <path class="pl-line" d="M20 240 H380"/>
+      <path class="pl-line" d="M40 240 V120 M140 240 V120 M40 120 A50 50 0 0 1 140 120"/>
+      <path class="pl-line pl-accent" d="M150 240 V110 M250 240 V110 M150 110 A50 50 0 0 1 250 110"/>
+      <path class="pl-line" d="M260 240 V120 M360 240 V120 M260 120 A50 50 0 0 1 360 120"/>
+      <path class="pl-line" d="M20 70 H380 M20 70 V60 M380 70 V60"/>
+      <text x="26" y="52">ELEVATION · AA'</text>
+      <text x="318" y="232">1:50</text>
+    </svg>
+    <div class="pl-tag">Ar. Yusuf Shaikh — The Monograph</div>
+  </div>
+  <div class="pl-count" id="pl-num">000</div>
+</div>
+
+<!-- ============================ PAGE TRANSITION WIPE ============================ -->
+<div class="wipe" id="wipe" aria-hidden="true" data-cursor-theme="light">
+  <div class="wipe-panel" id="wipe-panel"></div>
+  <div class="wipe-name"><span id="wipe-name">AR. YUSUF SHAIKH</span></div>
+</div>
+
+<!-- ============================ CURSOR ============================ -->
+<div class="cursor-layer" id="cursor" aria-hidden="true">
+  <div class="ch-x" id="ch-x"></div>
+  <div class="ch-y" id="ch-y"></div>
+  <div class="cursor-dot" id="cursor-dot">
+    <span class="cursor-label" id="cursor-label">VIEW</span>
+    <span class="cursor-coords" id="cursor-coords">X 0000 · Y 0000</span>
+  </div>
+</div>
+
+<!-- ============================ NAV ============================ -->
+<header class="site-nav" id="site-nav">
+  <a class="nav-brand" href="index.html" data-transition aria-label="Urban Craft Studio — home">
+    <span class="nav-mark" aria-hidden="true">UCS</span>
+    <span class="nav-name">Urban Craft<br><small>Studio · Est. 2018</small></span>
+  </a>
+  <nav aria-label="Primary">
+    <ul class="nav-links">
+      <li><a href="index.html" data-scramble data-transition>Studio</a></li>
+      <li><a href="index.html#works" data-scramble data-transition>Works</a></li>
+      <li><a href="#journey" data-scramble>Journey</a></li>
+      <li><a href="#gallery" data-scramble>Gallery</a></li>
+      <li><a href="architect.html" data-scramble aria-current="page">Architect</a></li>
+      <li><a href="#contact" data-scramble>Contact</a></li>
+    </ul>
+  </nav>
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+    <i></i><i></i><i></i>
+  </button>
+</header>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true" data-cursor-theme="light">
+  <button class="mm-close" id="mm-close">Close ✕</button>
+  <nav aria-label="Mobile">
+    <a href="index.html" data-transition><span class="mono">01</span>Studio</a>
+    <a href="index.html#works" data-transition><span class="mono">02</span>Works</a>
+    <a href="#journey"><span class="mono">03</span>Journey</a>
+    <a href="#gallery"><span class="mono">04</span>Gallery</a>
+    <a href="#contact"><span class="mono">05</span>Contact</a>
+  </nav>
+</div>
+
+<!-- fixed UI -->
+<div class="scalebar" aria-hidden="true">
+  <div class="sb-track"><i id="sb-fill"></i></div>
+  <div class="sb-labels"><span>0</span><span>5</span><span>10 m</span></div>
+</div>
+<div class="sec-ticker" aria-hidden="true"><b id="tick-num">01</b> / 09 — <span id="tick-name">The Architect</span></div>
+
+<main id="main">
+
+<!-- ============================ 01 · HERO ============================ -->
+<section class="a-hero" id="hero">
+  <div class="a-hero-canvas" id="a-hero-canvas" aria-hidden="true"></div>
+  <svg class="a-hero-svg" id="a-hero-svg" viewBox="0 0 400 300" aria-hidden="true">
+    <path d="M30 280 H370 M50 280 V140 M150 280 V140 M50 140 A50 50 0 0 1 150 140 M160 280 V130 M260 280 V130 M160 130 A50 50 0 0 1 260 130 M270 280 V140 M370 280 V140 M270 140 A50 50 0 0 1 370 140 M30 80 H370"/>
+  </svg>
+  <div class="container a-hero-grid">
+    <div>
+      <p class="a-eyebrow mono" id="a-eyebrow">AR. — Principal Architect — Pune, IN — 18°31′N 73°51′E</p>
+      <h1 class="a-name" aria-label="Yusuf Shaikh">
+        <span class="line" aria-hidden="true"><span class="word">Yusuf</span></span>
+        <span class="line" aria-hidden="true"><span class="word">Shaikh</span></span>
+      </h1>
+      <p class="a-role" id="a-role"></p>
+      <p class="a-words" aria-label="Signature words"><span aria-hidden="true">Designs that are</span> <b id="a-word">Contextual</b></p>
+    </div>
+    <div class="a-portrait">
+      <div class="a-tilt" id="a-tilt">
+        <span class="arch-grid" aria-hidden="true"></span>
+        <div class="arch-frame">
+          <!-- TODO: replace with real photos of Ar. Yusuf Shaikh from @iamyusufshaikh -->
+          <img id="a-portrait-img" src="" alt="Hands drafting an architectural plan — placeholder portrait for Ar. Yusuf Shaikh" decoding="async">
+          <span class="arch-sheen" id="arch-sheen" aria-hidden="true"></span>
+        </div>
+        <span class="arch-line" aria-hidden="true"></span>
+        <div class="a-portrait-tag" data-cursor-theme="light">
+          <span>Founder · Est. 2018</span>
+          <strong id="a-tag-name"></strong>
+        </div>
+      </div>
+      <div class="a-portrait-cap"><span>Fig. 00 — The drafting hand</span><span>TODO: real portrait</span></div>
+    </div>
+  </div>
+  <div class="a-scroll mono" aria-hidden="true">Scroll<span class="hs-line"></span></div>
+</section>
+
+<!-- ============================ 02 · BIO ============================ -->
+<section class="section-pad" id="bio">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-index">02 /</span>
+      <h2 class="sec-title"><span class="line"><span class="lw">In His Words</span></span></h2>
+      <span class="sec-rule"></span>
+      <span class="sec-note">Monograph · Ch. 1</span>
+    </div>
+    <p class="a-quote" id="a-quote"></p>
+    <div class="bio-grid">
+      <div class="bio-annos" id="bio-annos"></div>
+      <div class="bio-copy" id="bio-copy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 03 · JOURNEY ============================ -->
+<section class="journey" id="journey" data-cursor-theme="light">
+  <div class="j-year mono" id="j-year" aria-hidden="true">2010</div>
+  <div class="container" style="padding-top:clamp(80px,12vh,130px)">
+    <div class="sec-head">
+      <span class="sec-index">03 /</span>
+      <h2 class="sec-title"><span class="line"><span class="lw">The Journey</span></span></h2>
+      <span class="sec-rule"></span>
+      <span class="sec-note">2010 — 2026</span>
+    </div>
+  </div>
+  <div class="j-persp" id="j-persp">
+    <div class="j-plane">
+      <div class="j-track" id="j-track">
+        <div class="j-rail" aria-hidden="true"><i id="j-rail-fill"></i></div>
+        <!-- milestone cards injected by JS -->
+      </div>
+    </div>
+  </div>
+  <div style="height:clamp(60px,10vh,110px)"></div>
+</section>
+
+<!-- ============================ 04 · ACHIEVEMENTS ============================ -->
+<section class="section-pad" id="achievements">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-index">04 /</span>
+      <h2 class="sec-title"><span class="line"><span class="lw">Recognition</span></span></h2>
+      <span class="sec-rule"></span>
+      <span class="sec-note">Tap a plaque to turn it</span>
+    </div>
+    <div class="plaque-grid" id="plaque-grid"></div>
+    <div class="stats-row" id="stats-row"></div>
+  </div>
+</section>
+
+<!-- ============================ 05 · PHILOSOPHY ============================ -->
+<section class="philosophy section-pad" id="philosophy">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-index">05 /</span>
+      <h2 class="sec-title"><span class="line"><span class="lw">Three Lines I Draw By</span></span></h2>
+      <span class="sec-rule"></span>
+      <span class="sec-note">Philosophy</span>
+    </div>
+    <div class="pillars" id="pillars">
+      <svg class="pillar-link" id="pillar-link" preserveAspectRatio="none" viewBox="0 0 100 2"><path id="pillar-path" d="M0 1 H100" pathLength="100"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 06 · GALLERY ============================ -->
+<section class="lens section-pad" id="gallery">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-index">06 /</span>
+      <h2 class="sec-title"><span class="line"><span class="lw">Through the Lens</span></span></h2>
+      <span class="sec-rule"></span>
+      <span class="sec-note">Drag to rotate</span>
+    </div>
+    <div class="lens-filters" id="lens-filters" role="group" aria-label="Filter gallery by category"></div>
+  </div>
+  <div class="cyl-stage" id="cyl-stage" data-cursor="drag">
+    <div class="cyl-ring" id="cyl-ring"></div>
+  </div>
+  <div class="deck-stage" id="deck-stage" hidden></div>
+  <p class="deck-count mono" id="deck-count" hidden></p>
+  <p class="cyl-hint" id="cyl-hint">Drag / use arrows — click a frame to open</p>
+  <div class="cyl-nav">
+    <button class="cyl-btn" id="cyl-prev" aria-label="Rotate gallery left">←</button>
+    <button class="cyl-btn" id="cyl-next" aria-label="Rotate gallery right">→</button>
+  </div>
+</section>
+
+<!-- ============================ 07 · TESTIMONIALS ============================ -->
+<section class="testi section-pad" id="testimonials" data-cursor-theme="light">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-index">07 /</span>
+      <h2 class="sec-title"><span class="line"><span class="lw">Kind Words</span></span></h2>
+      <span class="sec-rule"></span>
+      <span class="sec-note">Client voices</span>
+    </div>
+    <div class="testi-wrap">
+      <span class="testi-mark" id="testi-mark" aria-hidden="true">“</span>
+      <div class="testi-stage" id="testi-stage" data-cursor="read"></div>
+      <p class="testi-hint">Drag the top card away · auto-advances every 6s</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 08 · WORKS BY YUSUF ============================ -->
+<section class="section-pad" id="works-strip">
+  <div class="container">
+    <div class="sec-head">
+      <span class="sec-index">08 /</span>
+      <h2 class="sec-title"><span class="line"><span class="lw">Works by Yusuf</span></span></h2>
+      <span class="sec-rule"></span>
+      <span class="sec-note">Full case studies on the studio page</span>
+    </div>
+    <div class="wstrip-grid" id="wstrip-grid"></div>
+    <div class="wstrip-more">
+      <a class="btn magnetic" style="color:var(--ink);border-color:var(--line-strong)" href="index.html#works" data-transition><span>All case studies ↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ 09 · CTA / FOOTER ============================ -->
+<footer class="cta section-pad" id="contact" data-cursor-theme="light">
+  <div class="container">
+    <h2 class="cta-title" id="cta-title">Let's design <em>your</em> space.</h2>
+    <div class="cta-actions">
+      <a class="btn magnetic" id="cta-wa" href="#" target="_blank" rel="noopener"><span>Talk to Yusuf ↗</span></a>
+      <a class="btn magnetic" id="cta-ig" href="#" target="_blank" rel="noopener"><span>Instagram</span></a>
+      <div>
+        <button class="cta-mail" id="copy-email" type="button" aria-label="Copy email address"></button>
+        <p class="cta-sub">Click to copy</p>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <span id="copyright"></span>
+      <span aria-hidden="true">Blueprint → Built · Monograph · Scale 1:50</span>
+      <a href="index.html" data-transition>← Back to the studio</a>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<!-- ============================ LIGHTBOX ============================ -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image viewer" data-cursor-theme="light">
+  <button class="lb-close" id="lb-close" aria-label="Close viewer">✕</button>
+  <button class="lb-arrow lb-prev" id="lb-prev" aria-label="Previous image">←</button>
+  <img id="lb-img" alt="">
+  <button class="lb-arrow lb-next" id="lb-next" aria-label="Next image">→</button>
+  <p class="lb-cap" id="lb-cap"></p>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Email copied to clipboard</div>
+
+<!-- ============================ LIBRARIES (CDN — same as index.html) ============================ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.150.1/three.min.js"></script>
+
+<script>
+/* ==========================================================================
+   ARCHITECT DATA — ALL DUMMY CONTENT. Edit this object to go live.
+   ========================================================================== */
+const SHOW_SAMPLE_TESTIMONIALS = true; // DUMMY — set to false to hide sample reviews (section hides if none are real)
+const IMG = (id, w = 1600) => `https://images.unsplash.com/photo-${id}?w=${w}&q=80&auto=format&fit=crop`;
+
+const ARCHITECT = {
+  name: "Ar. Yusuf Shaikh",                                        // DUMMY
+  first: "Yusuf", last: "Shaikh",                                  // DUMMY
+  role: "Founder & Principal Architect, Urban Craft Studio",       // DUMMY
+  base: "Pune, India",                                             // DUMMY
+  coords: "18°31′N 73°51′E",                                       // DUMMY
+  instagram: "https://instagram.com/iamyusufshaikh",               // DUMMY
+  studioInstagram: "https://instagram.com/u_c_studio",             // DUMMY
+  whatsapp: "919552756049",                                        // DUMMY
+  email: "urbancraft.studio18@gmail.com",                          // DUMMY
+  portrait: "1503387762-592deb58ef4e",                             // DUMMY — TODO: replace with real photos from @iamyusufshaikh
+
+  intro: "I design spaces the way I'd want to live in them: with light first, honest materials second, and nothing that doesn't earn its place.", // DUMMY
+
+  bio: [ // DUMMY — 3 paragraphs
+    "It began in the old wadas of Pune — houses built around courtyards, where light moved across stone floors through the day and every room opened to the sky at its centre. Long before architecture school, those courtyards taught Yusuf what a plan could feel like.",
+    "A Bachelor of Architecture followed, then formative years in practice on residences and commercial buildings — learning how drawings survive contact with a site, how materials age, and how a detail either earns its place or quietly fails.",
+    "In 2018 he founded Urban Craft Studio in Pune: a practice built on contextual design, honest materials and light — spaces that feel inevitable rather than invented, from the first sketched line to the handover of keys.",
+  ],
+  bioAnnos: ["Ref. A — Pune wadas", "Ref. B — Years in practice", "Ref. C — Est. 2018"], // DUMMY
+
+  words: ["Contextual", "Light", "Material", "Craft", "Calm"],     // DUMMY — rotating signature words
+
+  journey: [ // DUMMY timeline
+    { year: "2010", title: "Began B.Arch",                     note: "[College name — TODO]",                            img: "1503387762-592deb58ef4e", alt: "Early hand-drafted architectural sketches" },
+    { year: "2015", title: "Junior Architect",                 note: "Graduated; joined [Firm name — TODO]",             img: "1497366216548-37526070297c", alt: "An architecture office workspace" },
+    { year: "2016", title: "Registered Architect",             note: "Council of Architecture (CoA)",                    img: "1541888946425-d81bb19240f5", alt: "Construction documents and site work" }, // CoA number intentionally NOT shown
+    { year: "2018", title: "Founded Urban Craft Studio",       note: "Pune, Maharashtra",                                img: "1531973576160-7125cd663d86", alt: "The young studio's open workspace" },
+    { year: "2021", title: "First large villa",                note: "Aqua Villa, Lonavala — design start",              img: "1613490493576-7fde63acd811", alt: "Aqua Villa with its stepped infinity pool" },
+    { year: "2024", title: "40 projects delivered",            note: "Across homes, offices and interiors",              img: "1600047509807-ba8f99d2cdde", alt: "Terracotta House facade" },
+    { year: "2026", title: "First high-rise concept",          note: "Skyline Residences, Mumbai",                       img: "1545324418-cc1a3fa10c00", alt: "Skyline Residences tower concept" },
+  ],
+
+  achievements: [ // DUMMY plaques — front { year, title }, back { detail }
+    { year: "2023", title: "[Award name — TODO]",              detail: "e.g. “Best Residential Design”, Regional Design Awards. Replace with the real award, category and year." },
+    { year: "2025", title: "Featured: The Courtyard Residence", detail: "Published in [Publication — TODO]. Replace with the magazine / platform and issue." },
+    { year: "2024", title: "Speaker — Designing with Courtyards", detail: "Talk delivered at [Event — TODO]. Replace with the real event and city." },
+    { year: "2025", title: "Thesis Jury Member",               detail: "Student thesis jury at [College — TODO]. Replace with the institution's name." },
+  ],
+
+  stats: [ // DUMMY
+    { value: 8,      suffix: "+", label: "Years of Practice" },
+    { value: 45,     suffix: "+", label: "Projects Delivered" },
+    { value: 12,     suffix: "",  label: "Cities" },
+    { value: 350000, suffix: "+", label: "Sq Ft Designed" },
+  ],
+
+  pillars: [ // DUMMY
+    { title: "Light first",      line: "Every plan starts with where the sun enters." },
+    { title: "Honest materials", line: "Stone, lime, timber, terracotta: used as they are." },
+    { title: "Context over trend", line: "A building should belong to its street." },
+  ],
+
+  gallery: [ // DUMMY — “Through the Lens”
+    { id: "1503387762-592deb58ef4e", cat: "sketch", caption: "First lines — courtyard study" },
+    { id: "1504307651254-35680f356dfd", cat: "site",   caption: "On site — RCC frame rising" },
+    { id: "1541888946425-d81bb19240f5", cat: "site",   caption: "On site — steel and sparks" },
+    { id: "1497366216548-37526070297c", cat: "studio", caption: "Studio life — the long table" },
+    { id: "1531973576160-7125cd663d86", cat: "studio", caption: "Studio life — open plan" },
+    { id: "1600585154340-be6161a56a0c", cat: "built",  caption: "The Courtyard Residence, Pune" },
+    { id: "1613490493576-7fde63acd811", cat: "built",  caption: "Aqua Villa, Lonavala" },
+    { id: "1600047509807-ba8f99d2cdde", cat: "built",  caption: "Terracotta House, Nashik" },
+    { id: "1600566753190-17f0baa2a6c3", cat: "built",  caption: "Timber Box Studio, Kolhapur" },
+    { id: "1545324418-cc1a3fa10c00", cat: "built",  caption: "Skyline Residences — concept" },
+    { id: "1554995207-c18c203602cb", cat: "built",  caption: "Ember Apartment, Pune" },
+    { id: "1600607687939-ce8a6c25118c", cat: "built",  caption: "Layered interiors, in light" },
+    { id: "1616486338812-3dadae4b4ace", cat: "built",  caption: "Calm rooms, warm materials" },
+    { id: "1487958449943-2429e8be8625", cat: "built",  caption: "Concrete and sky" },
+  ],
+  galleryCats: [ // DUMMY
+    { key: "all",    label: "All" },
+    { key: "sketch", label: "Sketches & Process" },
+    { key: "site",   label: "On Site" },
+    { key: "studio", label: "Studio Life" },
+    { key: "built",  label: "Built Work" },
+  ],
+
+  testimonials: [ // SAMPLE PLACEHOLDERS ONLY — collect real reviews with client permission before launch
+    { quote: "The process was remarkably clear: every drawing was explained, every decision had a reason, and the site always matched the plan.", name: "Client Name", project: "Residence", location: "Pune", sample: true },
+    { quote: "What struck us most was the attention to light — rooms we thought would need lamps all day are bright until sunset.", name: "Client Name", project: "Villa", location: "Lonavala", sample: true },
+    { quote: "Handover happened on the date written in the first proposal. In construction, that alone says everything.", name: "Client Name", project: "Workspace", location: "Pune", sample: true },
+    { quote: "They treated our small apartment with the same seriousness as a large villa — every centimetre was drawn, discussed and used.", name: "Client Name", project: "Interior", location: "Pune", sample: true },
+  ],
+
+  works: [ // compact strip — covers re-used from the studio page's DATA.projects (DUMMY)
+    { title: "The Courtyard Residence", cover: "1600585154340-be6161a56a0c", meta: "Residential · Pune · 2025" },
+    { title: "Aqua Villa",              cover: "1613490493576-7fde63acd811", meta: "Residential · Lonavala · 2024" },
+    { title: "Terracotta House",        cover: "1600047509807-ba8f99d2cdde", meta: "Residential · Nashik · 2025" },
+    { title: "Linea Workspace",         cover: "1531973576160-7125cd663d86", meta: "Commercial · Pune · 2025" },
+    { title: "Skyline Residences",      cover: "1545324418-cc1a3fa10c00", meta: "Concept · Mumbai · 2026" },
+    { title: "Ember Apartment",         cover: "1554995207-c18c203602cb", meta: "Interior · Pune · 2024" },
+    { title: "Timber Box Studio",       cover: "1600566753190-17f0baa2a6c3", meta: "Residential · Kolhapur · 2023" },
+  ],
+};
+
+/* ==========================================================================
+   APP
+   ========================================================================== */
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  const qs  = (s, c = document) => c.querySelector(s);
+  const qsa = (s, c = document) => [...c.querySelectorAll(s)];
+  const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const FINE_POINTER = window.matchMedia("(pointer: fine)").matches;
+  const MOBILE = window.matchMedia("(max-width: 860px)").matches;
+  const HAS_GSAP = typeof gsap !== "undefined";
+  const inFormat = new Intl.NumberFormat("en-IN");
+  let lenis = null;
+
+  /* ---------- session flag for the page transition (wrapped in try/catch) ---------- */
+  const flag = {
+    get() { try { return sessionStorage.getItem("ucs_wipe"); } catch { return null; } },
+    set(v) { try { sessionStorage.setItem("ucs_wipe", v); } catch {} },
+    clear() { try { sessionStorage.removeItem("ucs_wipe"); } catch {} },
+  };
+
+  /* ------------------------------------------------------------------
+     RENDER FROM DATA
+  ------------------------------------------------------------------ */
+  function render() {
+    const A = ARCHITECT;
+    qs("#a-role").textContent = A.role + " — " + A.base;
+    qs("#a-portrait-img").src = IMG(A.portrait, 800);
+    qs("#a-tag-name").textContent = A.name;
+
+    // bio
+    qs("#a-quote").innerHTML = A.intro.split(" ").map(w => `<span class="w">${w}</span>`).join(" ");
+    qs("#bio-copy").innerHTML = A.bio.map(p => `<p>${p}</p>`).join("");
+    qs("#bio-annos").innerHTML = A.bioAnnos.map(t => `<div class="bio-anno">${t}<i></i></div>`).join("");
+
+    // journey
+    qs("#j-track").insertAdjacentHTML("beforeend", A.journey.map((j, i) => `
+      <article class="j-card" data-year="${j.year}">
+        <span class="mono">${j.year}</span>
+        <h3>${j.title}</h3>
+        <p>${j.note}</p>
+        <div class="j-media"><img src="${IMG(j.img, 800)}" alt="${j.alt}" loading="lazy" decoding="async"></div>
+        <span class="j-dot" aria-hidden="true"></span>
+      </article>`).join(""));
+
+    // plaques
+    qs("#plaque-grid").innerHTML = A.achievements.map((a, i) => `
+      <button class="plaque" type="button" aria-label="Plaque: ${a.title}, ${a.year}. Activate to flip for details.">
+        <span class="plaque-inner">
+          <span class="plaque-face plaque-front"><div>
+            <span class="mono">№ 0${i + 1} — ${a.year}</span>
+            <h3>${a.title}</h3>
+            <span class="flip-hint">Hover / tap to turn ⟲</span>
+          </div></span>
+          <span class="plaque-face plaque-back"><div>
+            <span class="mono">${a.year} — Detail</span>
+            <p>${a.detail}</p>
+            <span class="flip-hint">DUMMY — replace before launch</span>
+          </div></span>
+        </span>
+      </button>`).join("");
+
+    // stats
+    qs("#stats-row").innerHTML = A.stats.map(st => `
+      <div class="stat"><b><span class="stat-num" data-value="${st.value}">0</span><em>${st.suffix}</em></b><span>${st.label}</span></div>`).join("");
+
+    // pillars (icons: sun / material layers / street)
+    const icons = [
+      '<svg viewBox="0 0 40 40"><path d="M20 26 a8 8 0 0 1 16 0 Z M20 26 H4 M28 13 V6 M14 16 l-5 -5 M42 16 l5 -5 M8 32 H32 M12 38 H28" transform="translate(-4,0)"/></svg>',
+      '<svg viewBox="0 0 40 40"><path d="M6 32 H34 M6 32 V24 H22 V32 M22 24 H34 V32 M6 24 V16 H16 V24 M16 16 H28 V24 M10 16 V8 H24 V16"/></svg>',
+      '<svg viewBox="0 0 40 40"><path d="M4 34 H36 M8 34 V18 L15 12 V34 M15 18 H22 V34 M26 34 V10 H33 V34 M26 16 H33 M26 22 H33 M26 28 H33"/></svg>',
+    ];
+    const pillarsEl = qs("#pillars");
+    A.pillars.forEach((p, i) => pillarsEl.insertAdjacentHTML("beforeend", `
+      <div class="pillar">
+        <div class="pillar-icon">${icons[i]}</div>
+        <h3><i>0${i + 1}</i>${p.title}</h3>
+        <p>${p.line}</p>
+      </div>`));
+
+    // gallery filters
+    qs("#lens-filters").innerHTML = A.galleryCats.map((c, i) =>
+      `<button class="lf-btn" data-filter="${c.key}" aria-pressed="${i === 0}">${c.label}</button>`).join("");
+
+    // testimonials
+    const list = SHOW_SAMPLE_TESTIMONIALS ? A.testimonials : A.testimonials.filter(t => !t.sample);
+    if (!list.length) { qs("#testimonials").style.display = "none"; }
+
+    // works strip
+    qs("#wstrip-grid").innerHTML = A.works.map(w => `
+      <a class="ws-card" href="index.html#works" data-transition data-cursor="view" aria-label="${w.title} — open studio case studies">
+        <div class="ws-media"><img src="${IMG(w.cover, 800)}" alt="${w.title} — ${w.meta}" loading="lazy" decoding="async"></div>
+        <h3>${w.title}</h3>
+        <span class="mono">${w.meta}</span>
+      </a>`).join("");
+
+    // contact
+    qs("#cta-wa").href = `https://wa.me/${A.whatsapp}?text=` + encodeURIComponent("Hello Yusuf! I'd like to talk about designing a space.");
+    qs("#cta-ig").href = A.instagram;
+    qs("#copy-email").textContent = A.email;
+    qs("#copyright").textContent = "© 2026 Urban Craft Studio · Ar. Yusuf Shaikh";
+  }
+
+  /* ------------------------------------------------------------------
+     LENIS + CURSOR + NAV + MAGNETIC + TOAST (shared behaviours)
+  ------------------------------------------------------------------ */
+  function initLenis() {
+    if (REDUCED || typeof Lenis === "undefined" || !HAS_GSAP) return;
+    lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+  function scrollToTarget(hash) {
+    const el = qs(hash);
+    if (!el) return;
+    if (lenis) lenis.scrollTo(el, { duration: 1.4 });
+    else el.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth" });
+  }
+
+  let cursorPos = { x: innerWidth / 2, y: innerHeight / 2 };
+  function initCursor() {
+    if (!FINE_POINTER || REDUCED) return;
+    document.documentElement.classList.add("has-cursor");
+    const layer = qs("#cursor"), dot = qs("#cursor-dot"), label = qs("#cursor-label"),
+          chx = qs("#ch-x"), chy = qs("#ch-y"), coords = qs("#cursor-coords");
+    let tx = cursorPos.x, ty = cursorPos.y, x = tx, y = ty;
+    const evalTarget = el => {
+      const over = el && el.closest && el.closest("[data-cursor]");
+      if (over) label.textContent = over.dataset.cursor.toUpperCase();
+      layer.classList.toggle("is-active", !!over);
+    };
+    let themeDirty = true, lx = -99, ly = -99;
+    addEventListener("pointermove", e => { tx = e.clientX; ty = e.clientY; cursorPos = { x: tx, y: ty }; evalTarget(e.target); }, { passive: true });
+    addEventListener("scroll", () => { evalTarget(document.elementFromPoint(tx, ty)); themeDirty = true; }, { passive: true });
+    (function loop() {
+      x += (tx - x) * 0.2; y += (ty - y) * 0.2;
+      dot.style.transform = `translate(${x}px,${y}px)`;
+      chx.style.transform = `translateY(${y}px)`;
+      chy.style.transform = `translateX(${x}px)`;
+      coords.textContent = `X ${String(Math.round(x)).padStart(4, "0")} · Y ${String(Math.round(y)).padStart(4, "0")}`;
+      // rAF-throttled: switch to the light cursor over [data-cursor-theme="light"] areas
+      if (themeDirty || Math.abs(x - lx) > 4 || Math.abs(y - ly) > 4) {
+        themeDirty = false; lx = x; ly = y;
+        const under = document.elementFromPoint(Math.round(x), Math.round(y));
+        layer.classList.toggle("on-dark", !!(under && under.closest('[data-cursor-theme="light"]')));
+      }
+      requestAnimationFrame(loop);
+    })();
+  }
+
+  const SCRAMBLE = "ABCDEFGHIKLMNOPRSTUVZ#/\\<>[]_";
+  function scramble(el, text) {
+    const original = text || el.dataset.text || (el.dataset.text = el.textContent);
+    if (REDUCED) { el.textContent = original; return; }
+    let frame = 0;
+    const total = Math.max(8, original.length * 2);
+    clearInterval(el._scr);
+    el._scr = setInterval(() => {
+      el.textContent = [...original].map((ch, i) => {
+        if (ch === " ") return " ";
+        return i < (frame / total) * original.length ? ch : SCRAMBLE[Math.floor(Math.random() * SCRAMBLE.length)];
+      }).join("");
+      if (++frame > total) { clearInterval(el._scr); el.textContent = original; }
+    }, 28);
+  }
+
+  function initNav() {
+    qsa("[data-scramble]").forEach(el => {
+      el.addEventListener("mouseenter", () => scramble(el));
+      el.addEventListener("focus", () => scramble(el));
+    });
+    qsa('a[href^="#"]').forEach(a => a.addEventListener("click", e => {
+      const hash = a.getAttribute("href");
+      if (hash.length < 2 || !qs(hash)) return;
+      e.preventDefault(); closeMenu(); scrollToTarget(hash);
+    }));
+    const menu = qs("#mobile-menu"), burger = qs("#nav-burger");
+    burger.addEventListener("click", () => {
+      const open = menu.classList.toggle("open");
+      menu.setAttribute("aria-hidden", String(!open));
+      burger.setAttribute("aria-expanded", String(open));
+      if (lenis) open ? lenis.stop() : lenis.start();
+    });
+    qs("#mm-close").addEventListener("click", closeMenu);
+    function closeMenu() {
+      menu.classList.remove("open");
+      menu.setAttribute("aria-hidden", "true");
+      burger.setAttribute("aria-expanded", "false");
+      if (lenis && !qs("#lightbox").classList.contains("open")) lenis.start();
+    }
+    addEventListener("scroll", () => qs("#site-nav").classList.toggle("scrolled", (window.scrollY || 0) > 80), { passive: true });
+  }
+
+  function initMagnetic() {
+    if (!FINE_POINTER || REDUCED || !HAS_GSAP) return;
+    qsa(".magnetic").forEach(btn => {
+      btn.addEventListener("pointermove", e => {
+        const r = btn.getBoundingClientRect();
+        gsap.to(btn, { x: (e.clientX - r.left - r.width / 2) * .3, y: (e.clientY - r.top - r.height / 2) * .3, duration: .4, ease: "power3.out" });
+      });
+      btn.addEventListener("pointerleave", () => gsap.to(btn, { x: 0, y: 0, duration: .6, ease: "elastic.out(1,0.4)" }));
+    });
+  }
+
+  function toast(msg) {
+    const t = qs("#toast");
+    t.textContent = msg; t.classList.add("show");
+    clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 2200);
+  }
+  function initContact() {
+    qs("#copy-email").addEventListener("click", async () => {
+      const email = ARCHITECT.email;
+      try { await navigator.clipboard.writeText(email); toast("Email copied to clipboard"); }
+      catch {
+        const ta = document.createElement("textarea");
+        ta.value = email; document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); toast("Email copied to clipboard"); } catch { toast(email); }
+        ta.remove();
+      }
+    });
+  }
+
+  /* ------------------------------------------------------------------
+     ENTRY: preloader OR reverse wipe (when arriving from index.html)
+  ------------------------------------------------------------------ */
+  function initEntry(onDone) {
+    const pre = qs("#preloader");
+    const cameWithWipe = flag.get() === "1";
+    if (cameWithWipe) { flag.clear(); pre.remove(); playWipeIn(onDone); return; }
+    if (!HAS_GSAP || REDUCED) {
+      pre.style.transition = "opacity .4s"; pre.style.opacity = "0";
+      setTimeout(() => { pre.remove(); onDone(true); }, 420);
+      return;
+    }
+    if (lenis) lenis.stop();
+    const paths = qsa(".pl-plan path");
+    paths.forEach(p => { const l = p.getTotalLength(); p.style.strokeDasharray = l; p.style.strokeDashoffset = l; });
+    const num = { v: 0 };
+    gsap.timeline({ onComplete: () => { pre.remove(); if (lenis) lenis.start(); ScrollTrigger.refresh(); onDone(false); } })
+      .to(paths, { strokeDashoffset: 0, duration: 1.6, ease: "power2.inOut", stagger: 0.12 }, 0)
+      .to(num, { v: 100, duration: 1.8, ease: "power2.inOut", onUpdate: () => qs("#pl-num").textContent = String(Math.round(num.v)).padStart(3, "0") }, 0)
+      .to(".pl-plan text", { opacity: 1, duration: .4, stagger: .1 }, 1.0)
+      .to(".pl-center,.pl-count", { opacity: 0, y: -24, duration: .4, ease: "power2.in" }, "+=0.2")
+      .to(pre, { clipPath: "inset(0 0 100% 0)", duration: .8, ease: "power4.inOut" }, "-=0.1");
+  }
+  /* reverse wipe: terracotta panel covers the page, name slides, panel exits upward */
+  function playWipeIn(onDone) {
+    const wipe = qs("#wipe"), panel = qs("#wipe-panel"), name = qs("#wipe-name");
+    if (!HAS_GSAP || REDUCED) { wipe.remove(); onDone(REDUCED); return; }
+    wipe.classList.add("on");
+    gsap.set(panel, { y: 0 });                    // starts covering
+    gsap.set(name, { opacity: 1, xPercent: -8 });
+    gsap.timeline({ onComplete: () => { wipe.classList.remove("on"); onDone(false); } })
+      .to(name, { xPercent: 8, duration: 1.0, ease: "power2.inOut" }, 0)
+      .to(name, { opacity: 0, duration: .3 }, .62)
+      .to(panel, { yPercent: -101, duration: .85, ease: "power4.inOut" }, .45);
+  }
+  /* bfcache (Back/Forward): never restore a page stuck under the terracotta panel */
+  addEventListener("pageshow", e => {
+    if (!e.persisted) return;
+    const w = qs("#wipe");
+    if (w) w.classList.remove("on");
+    if (HAS_GSAP) gsap.set("#wipe-panel", { y: 0, yPercent: 101 });
+    flag.clear();
+    if (lenis) lenis.start();
+    if (HAS_GSAP) ScrollTrigger.refresh();
+  });
+  /* exit wipe used by data-transition links (to index.html) */
+  function initTransitions() {
+    qsa("a[data-transition]").forEach(a => a.addEventListener("click", e => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      const href = a.getAttribute("href");
+      e.preventDefault();
+      flag.set("1");
+      if (!HAS_GSAP || REDUCED) { location.href = href; return; }
+      const wipe = qs("#wipe"), panel = qs("#wipe-panel"), name = qs("#wipe-name");
+      wipe.classList.add("on");
+      gsap.set(panel, { yPercent: 101, y: 0 });
+      gsap.set(name, { opacity: 0, xPercent: -8 });
+      gsap.timeline({ onComplete: () => location.href = href })
+        .to(panel, { yPercent: 0, duration: .65, ease: "power4.inOut" }, 0)
+        .to(name, { opacity: 1, xPercent: 0, duration: .5, ease: "power2.out" }, .3);
+    }));
+  }
+
+  /* ------------------------------------------------------------------
+     01 · HERO — intro, tilt, scramble words, Three.js arcade
+  ------------------------------------------------------------------ */
+  function heroIntro(instant) {
+    const words = qsa(".a-name .word");
+    if (instant || !HAS_GSAP || REDUCED) return;
+    gsap.timeline()
+      .from(words, { yPercent: 118, rotateX: -45, duration: 1.15, ease: "power4.out", stagger: 0.12 }, 0)
+      .from("#a-eyebrow", { opacity: 0, x: -24, duration: .8, ease: "power3.out" }, .3)
+      .from(".a-role,.a-words", { opacity: 0, y: 18, duration: .8, stagger: .12, ease: "power3.out" }, .7)
+      .from(".a-portrait", { opacity: 0, y: 40, duration: 1.1, ease: "power4.out" }, .45)
+      .from(".a-hero-canvas,.a-hero-svg", { opacity: 0, duration: 1.4 }, .5)
+      .fromTo("#arch-sheen", { xPercent: -120 }, { xPercent: 220, duration: 1.4, ease: "power2.inOut" }, 1.0);
+  }
+  function initWordCycle() {
+    const el = qs("#a-word");
+    let i = 0;
+    if (REDUCED) return; // keep first word static
+    setInterval(() => { i = (i + 1) % ARCHITECT.words.length; scramble(el, ARCHITECT.words[i]); }, 2600);
+  }
+  function initTilt() {
+    if (!FINE_POINTER || REDUCED || !HAS_GSAP) return;
+    const hero = qs(".a-hero"), tilt = qs("#a-tilt"), sheen = qs("#arch-sheen");
+    gsap.set(tilt, { transformPerspective: 1200 });
+    hero.addEventListener("pointermove", e => {
+      const r = hero.getBoundingClientRect();
+      const nx = (e.clientX - r.left) / r.width - .5;
+      const ny = (e.clientY - r.top) / r.height - .5;
+      gsap.to(tilt, { rotateY: nx * 8, rotateX: -ny * 8, duration: .7, ease: "power3.out" });
+      gsap.to(sheen, { xPercent: nx * 240, duration: 1.1, ease: "power3.out" });
+    });
+    hero.addEventListener("pointerleave", () => gsap.to(tilt, { rotateY: 0, rotateX: 0, duration: 1, ease: "power3.out" }));
+  }
+  function initHero3D() {
+    const wrap = qs("#a-hero-canvas");
+    if (typeof THREE === "undefined" || MOBILE || REDUCED) return; // static SVG arcade stays as fallback
+    try {
+      qs("#a-hero-svg").style.display = "none";
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(30, wrap.clientWidth / wrap.clientHeight, .1, 100);
+      camera.position.set(4.6, 2.6, 7.2); camera.lookAt(0, 1.2, 0);
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+      renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+      wrap.appendChild(renderer.domElement);
+      const group = new THREE.Group();
+      const INK = 0x1a1a1a, TER = 0xc2643c;
+      // one extruded arch, repeated as an arcade
+      const archShape = new THREE.Shape();
+      archShape.moveTo(-1, 0); archShape.lineTo(-1, 2.4); archShape.lineTo(1, 2.4); archShape.lineTo(1, 0); archShape.lineTo(.62, 0);
+      archShape.lineTo(.62, 1.1); archShape.absarc(0, 1.1, .62, 0, Math.PI, false); archShape.lineTo(-.62, 0); archShape.lineTo(-1, 0);
+      const geo = new THREE.ExtrudeGeometry(archShape, { depth: .45, bevelEnabled: false });
+      const edges = new THREE.EdgesGeometry(geo, 24);
+      for (let i = 0; i < 3; i++) {
+        const m = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: i === 1 ? TER : INK, transparent: true, opacity: i === 1 ? .8 : .4 }));
+        m.position.set((i - 1) * 2.15, 0, 0);
+        group.add(m);
+      }
+      const grid = new THREE.GridHelper(12, 24, INK, INK);
+      grid.material.transparent = true; grid.material.opacity = .06;
+      group.add(grid);
+      scene.add(group);
+      let mx = 0, my = 0, scrollRot = 0;
+      addEventListener("pointermove", e => { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; }, { passive: true });
+      addEventListener("scroll", () => { scrollRot = (window.scrollY || 0) * 0.0004; }, { passive: true });
+      const clock = new THREE.Clock();
+      let raf = null;
+      function frame() {
+        raf = requestAnimationFrame(frame);
+        const t = clock.getElapsedTime();
+        group.rotation.y = t * .1 + mx * .4 + scrollRot;
+        group.rotation.x = my * .12;
+        renderer.render(scene, camera);
+      }
+      frame();
+      addEventListener("resize", () => {
+        camera.aspect = wrap.clientWidth / wrap.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+      });
+      new IntersectionObserver(([en]) => {   // pause render loop off-screen
+        if (en.isIntersecting) { if (!raf) frame(); }
+        else { cancelAnimationFrame(raf); raf = null; }
+      }).observe(wrap);
+    } catch (e) { qs("#a-hero-svg").style.display = ""; }
+  }
+
+  /* ------------------------------------------------------------------
+     SCROLL FX — titles, bio, plaques, pillars, stats, ticker, scale bar
+  ------------------------------------------------------------------ */
+  function initScrollFX() {
+    if (!HAS_GSAP) return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    // scale-bar progress + section ticker work even with reduced motion (cheap)
+    const SECTIONS = [["hero", "The Architect"], ["bio", "In His Words"], ["journey", "The Journey"], ["achievements", "Recognition"], ["philosophy", "Philosophy"], ["gallery", "Through the Lens"], ["testimonials", "Kind Words"], ["works-strip", "Works"], ["contact", "Contact"]];
+    ScrollTrigger.create({
+      trigger: document.body, start: "top top", end: "bottom bottom",
+      onUpdate: self => qs("#sb-fill").style.transform = `scaleX(${self.progress})`
+    });
+    SECTIONS.forEach(([id, name], i) => {
+      const el = qs("#" + id);
+      if (!el || el.style.display === "none") return;
+      ScrollTrigger.create({
+        trigger: el, start: "top 50%", end: "bottom 50%",
+        onToggle: s => { if (s.isActive) { qs("#tick-num").textContent = String(i + 1).padStart(2, "0"); qs("#tick-name").textContent = name; } }
+      });
+    });
+
+    if (REDUCED) return;
+
+    qsa(".sec-title .lw").forEach(el => gsap.from(el, { yPercent: 115, duration: 1, ease: "power4.out", scrollTrigger: { trigger: el, start: "top 88%" } }));
+    qsa(".sec-index,.sec-note").forEach(el => gsap.from(el, { opacity: 0, duration: .8, scrollTrigger: { trigger: el, start: "top 90%" } }));
+    qsa(".sec-rule").forEach(el => gsap.from(el, { scaleX: 0, transformOrigin: "left center", duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 90%" } }));
+    qsa("section,footer.cta").forEach(sec => ScrollTrigger.create({
+      trigger: sec, start: "top 60%",
+      onEnter: () => gsap.fromTo(".guides", { opacity: .9 }, { opacity: .5, duration: 1.4, ease: "power2.out" })
+    }));
+
+    // bio: pull-quote word scrub + annotation leader lines
+    gsap.fromTo("#a-quote .w", { opacity: .15 }, {
+      opacity: 1, stagger: .02, ease: "none",
+      scrollTrigger: { trigger: "#a-quote", start: "top 80%", end: "bottom 55%", scrub: true }
+    });
+    qsa(".bio-anno").forEach(a => {
+      gsap.from(a, { opacity: 0, x: -14, duration: .7, ease: "power3.out", scrollTrigger: { trigger: a, start: "top 85%" } });
+      gsap.to(qs("i", a), { scaleX: 1, duration: .9, ease: "power3.inOut", scrollTrigger: { trigger: a, start: "top 85%" } });
+    });
+    gsap.from(".bio-copy p", { opacity: 0, y: 26, stagger: .15, duration: .8, ease: "power3.out", scrollTrigger: { trigger: ".bio-copy", start: "top 82%" } });
+
+    // plaques: drop in rotateX from -90°
+    gsap.from(".plaque", {
+      rotateX: -90, opacity: 0, transformOrigin: "top center", stagger: .1, duration: 1, ease: "power3.out",
+      scrollTrigger: { trigger: ".plaque-grid", start: "top 82%" }
+    });
+
+    // stats count-up
+    qsa(".stat-num").forEach(el => {
+      const target = +el.dataset.value, obj = { v: 0 };
+      ScrollTrigger.create({
+        trigger: el, start: "top 85%", once: true,
+        onEnter: () => gsap.to(obj, { v: target, duration: 1.8, ease: "power3.out", onUpdate: () => el.textContent = inFormat.format(Math.round(obj.v)) })
+      });
+    });
+
+    // pillars: icons draw + continuous line scrub
+    qsa(".pillar").forEach((p, i) => {
+      const paths = qsa("svg path", qs(".pillar-icon", p));
+      paths.forEach(path => { const l = path.getTotalLength(); path.style.strokeDasharray = l; path.style.strokeDashoffset = l; });
+      ScrollTrigger.create({
+        trigger: p, start: "top 80%", once: true,
+        onEnter: () => {
+          gsap.to(paths, { strokeDashoffset: 0, duration: 1.4, ease: "power2.out" });
+          gsap.from(p.children, { opacity: 0, y: 20, stagger: .1, duration: .7, ease: "power3.out" });
+        }
+      });
+    });
+    const pp = qs("#pillar-path");
+    pp.style.strokeDasharray = 100; pp.style.strokeDashoffset = 100;
+    gsap.to(pp, { strokeDashoffset: 0, ease: "none", scrollTrigger: { trigger: "#pillars", start: "top 75%", end: "bottom 55%", scrub: true } });
+
+    // testimonials quote mark parallax
+    gsap.fromTo("#testi-mark", { yPercent: -24 }, { yPercent: 24, ease: "none", scrollTrigger: { trigger: ".testi", start: "top bottom", end: "bottom top", scrub: true } });
+
+    // works strip reveal
+    qsa(".ws-card").forEach((c, i) => {
+      gsap.fromTo(qs(".ws-media", c), { clipPath: "inset(0 100% 0 0)" }, {
+        clipPath: "inset(0 0% 0 0)", duration: .9, ease: "power4.inOut", delay: (i % 4) * .08,
+        scrollTrigger: { trigger: c, start: "top 88%" }
+      });
+    });
+
+    // CTA
+    gsap.from(".cta-title", { opacity: 0, y: 50, duration: 1, ease: "power4.out", scrollTrigger: { trigger: ".cta", start: "top 72%" } });
+    gsap.from(".cta-actions > *", { opacity: 0, y: 26, stagger: .1, duration: .8, ease: "power3.out", scrollTrigger: { trigger: ".cta-actions", start: "top 88%" } });
+  }
+
+  /* ------------------------------------------------------------------
+     03 · JOURNEY — pinned 3D track (flat list on mobile / reduced)
+  ------------------------------------------------------------------ */
+  function initJourney() {
+    const section = qs("#journey"), track = qs("#j-track"), cards = qsa(".j-card"), yearEl = qs("#j-year");
+    if (MOBILE || REDUCED || !HAS_GSAP) {
+      section.classList.add("flat");
+      if (HAS_GSAP && !REDUCED) cards.forEach(c => gsap.from(c, { opacity: 0, y: 36, duration: .8, ease: "power3.out", scrollTrigger: { trigger: c, start: "top 85%" } }));
+      return;
+    }
+    const persp = qs("#j-persp");
+    // the journey section fills the viewport while pinned (set BEFORE the trigger measures)
+    section.style.display = "flex";
+    section.style.flexDirection = "column";
+    section.style.height = "100svh";
+    section.style.minHeight = "640px";
+    const getAmount = () => Math.max(0, track.scrollWidth - persp.offsetWidth * .45);
+    let activeIdx = -1;
+    const setActive = i => {
+      if (i === activeIdx) return;
+      activeIdx = i;
+      cards.forEach((c, ci) => c.classList.toggle("active", ci === i));
+      yearEl.textContent = cards[i].dataset.year;
+    };
+    gsap.to(track, {
+      x: () => -getAmount(), ease: "none",
+      scrollTrigger: {
+        trigger: section, start: "top top", end: () => "+=" + (getAmount() + innerHeight * .3),
+        pin: true, scrub: 1, anticipatePin: 1, invalidateOnRefresh: true,
+        onUpdate: self => {
+          setActive(Math.min(cards.length - 1, Math.round(self.progress * (cards.length - 1))));
+          gsap.set("#j-rail-fill", { scaleX: self.progress });
+        }
+      }
+    });
+    setActive(0);
+  }
+
+  /* ------------------------------------------------------------------
+     04 · PLAQUES — tap/keyboard flip (hover handled in CSS)
+  ------------------------------------------------------------------ */
+  function initPlaques() {
+    qsa(".plaque").forEach(p => p.addEventListener("click", () => p.classList.toggle("flipped")));
+  }
+
+  /* ------------------------------------------------------------------
+     06 · GALLERY — cylinder (desktop) / card deck (mobile) + lightbox
+  ------------------------------------------------------------------ */
+  const lens = { items: [], filtered: [], rotation: 0, step: 0, radius: 0, vel: 0, dragging: false, raf: null };
+  function filteredGallery(cat) {
+    return ARCHITECT.gallery.filter(g => cat === "all" || g.cat === cat);
+  }
+  function buildCylinder(cat) {
+    const ring = qs("#cyl-ring"), stage = qs("#cyl-stage");
+    lens.filtered = filteredGallery(cat);
+    const n = lens.filtered.length;
+    const W = Math.min(225, Math.max(160, stage.offsetWidth * .16));
+    const H = W * 1.25;
+    lens.step = 360 / n;
+    lens.radius = Math.round((W / 2) / Math.tan(Math.PI / n)) + 70;
+    ring.style.setProperty("--cw", W + "px");
+    ring.innerHTML = lens.filtered.map((g, i) => `
+      <button class="cyl-item" type="button" data-i="${i}" data-cursor="view"
+        style="transform:translate(-50%,-50%) rotateY(${i * lens.step}deg) translateZ(${lens.radius}px)"
+        aria-label="Open image: ${g.caption}">
+        <figure><img src="${IMG(g.id, 800)}" alt="${g.caption}" loading="lazy" decoding="async">
+        <figcaption>${String(i + 1).padStart(2, "0")} — ${g.caption}</figcaption></figure>
+      </button>`).join("");
+    lens.rotation = 0;
+    paintCylinder();
+  }
+  function paintCylinder() {
+    const ring = qs("#cyl-ring");
+    ring.style.transform = `translate(-50%,-50%) rotateY(${lens.rotation}deg)`;
+    qsa(".cyl-item", ring).forEach((item, i) => {
+      // effective facing angle: 0 = front
+      let a = ((i * lens.step + lens.rotation) % 360 + 360) % 360;
+      if (a > 180) a -= 360;
+      const front = 1 - Math.min(1, Math.abs(a) / 110); // 1 at front → 0 at sides/back
+      const fig = item.firstElementChild;
+      fig.style.opacity = (.3 + front * .7).toFixed(3);
+      fig.style.transform = `scale(${(0.86 + front * .18).toFixed(3)})`;
+      item.style.zIndex = Math.round(front * 100);
+    });
+  }
+  function spinCylinder() {
+    if (lens.raf) return;
+    const tick = () => {
+      if (!lens.dragging) {
+        lens.rotation += lens.vel;
+        lens.vel *= .94;
+        if (Math.abs(lens.vel) < .003 && !lens.idle) lens.vel = 0;
+      }
+      if (lens.idleSpin && !lens.dragging && Math.abs(lens.vel) < .02) lens.rotation += .02; // gentle idle
+      paintCylinder();
+      lens.raf = requestAnimationFrame(tick);
+    };
+    tick();
+  }
+  function initCylinder() {
+    const stage = qs("#cyl-stage");
+    let startX = 0, startRot = 0, lastX = 0, lastT = 0, moved = 0;
+    lens.idleSpin = !REDUCED;
+    stage.addEventListener("pointerdown", e => {
+      lens.dragging = true; moved = 0;
+      startX = lastX = e.clientX; startRot = lens.rotation; lastT = performance.now();
+      stage.setPointerCapture(e.pointerId);
+    });
+    stage.addEventListener("pointermove", e => {
+      if (!lens.dragging) return;
+      const dx = e.clientX - startX;
+      moved = Math.max(moved, Math.abs(dx));
+      lens.rotation = startRot + dx * .22;
+      const now = performance.now();
+      lens.vel = (e.clientX - lastX) * .22 * Math.min(1, 16 / Math.max(1, now - lastT));
+      lastX = e.clientX; lastT = now;
+      paintCylinder();
+    });
+    const up = () => { lens.dragging = false; };
+    stage.addEventListener("pointerup", up);
+    stage.addEventListener("pointercancel", up);
+    // click (not drag) opens lightbox — pointer capture retargets the click to the
+    // stage itself, so fall back to hit-testing the pointer position
+    stage.addEventListener("click", e => {
+      if (moved > 8) return;
+      const hit = document.elementFromPoint(e.clientX, e.clientY);
+      const item = (e.target.closest && e.target.closest(".cyl-item")) || (hit && hit.closest(".cyl-item"));
+      if (item) openLightbox(+item.dataset.i, qs("img", item));
+    });
+    qs("#cyl-prev").addEventListener("click", () => rotateBy(lens.step));
+    qs("#cyl-next").addEventListener("click", () => rotateBy(-lens.step));
+    function rotateBy(deg) {
+      if (HAS_GSAP && !REDUCED) gsap.to(lens, { rotation: lens.rotation + deg, duration: .7, ease: "power3.out", onUpdate: paintCylinder });
+      else { lens.rotation += deg; paintCylinder(); }
+    }
+    // pause idle spin + painting when off-screen
+    new IntersectionObserver(([en]) => {
+      if (en.isIntersecting) spinCylinder();
+      else if (lens.raf) { cancelAnimationFrame(lens.raf); lens.raf = null; }
+    }).observe(stage);
+    addEventListener("resize", () => buildCylinder(currentCat));
+  }
+  /* mobile deck */
+  let deckOrder = [];
+  function buildDeck(cat) {
+    const stage = qs("#deck-stage");
+    lens.filtered = filteredGallery(cat);
+    deckOrder = lens.filtered.map((_, i) => i);
+    stage.innerHTML = lens.filtered.map((g, i) => `
+      <button class="deck-card" type="button" data-i="${i}" aria-label="Open image: ${g.caption}">
+        <figure><img src="${IMG(g.id, 800)}" alt="${g.caption}" loading="lazy" decoding="async">
+        <figcaption>${g.caption}</figcaption></figure>
+      </button>`).join("");
+    paintDeck();
+    let sx = 0, sy = 0, dragging = false, top = null, moved = 0;
+    stage.onpointerdown = e => {
+      top = stage.querySelector(`[data-i="${deckOrder[0]}"]`);
+      dragging = true; moved = 0; sx = e.clientX; sy = e.clientY;
+      stage.setPointerCapture(e.pointerId);
+    };
+    stage.onpointermove = e => {
+      if (!dragging || !top) return;
+      const dx = e.clientX - sx; moved = Math.max(moved, Math.abs(dx));
+      top.style.transform = `translate(calc(-50% + ${dx}px),-50%) rotate(${dx * .06}deg)`;
+    };
+    stage.onpointerup = stage.onpointercancel = e => {
+      if (!dragging || !top) return;
+      dragging = false;
+      const dx = e.clientX - sx;
+      if (Math.abs(dx) > 70) {
+        const dir = dx > 0 ? 1 : -1;
+        top.style.transition = "transform .45s ease, opacity .45s"; top.style.opacity = "0";
+        top.style.transform = `translate(calc(-50% + ${dir * 420}px),-50%) rotate(${dir * 18}deg)`;
+        const t = top;
+        setTimeout(() => { t.style.transition = ""; t.style.opacity = ""; deckOrder.push(deckOrder.shift()); paintDeck(); }, 420);
+      } else if (moved < 8) {
+        openLightbox(deckOrder[0], qs("img", top));
+        paintDeck();
+      } else paintDeck();
+      top = null;
+    };
+  }
+  function paintDeck() {
+    const stage = qs("#deck-stage");
+    deckOrder.forEach((itemIdx, pos) => {
+      const el = stage.querySelector(`[data-i="${itemIdx}"]`);
+      if (!el) return;
+      const p = Math.min(pos, 4);
+      el.style.zIndex = 100 - pos;
+      el.style.opacity = pos > 4 ? 0 : 1;
+      el.style.transform = `translate(-50%,calc(-50% + ${p * 14}px)) translateZ(${-p * 55}px) rotate(${p % 2 ? 1.6 : -1.2}deg)`;
+    });
+    qs("#deck-count").textContent = `${String(deckOrder[0] + 1).padStart(2, "0")} / ${String(lens.filtered.length).padStart(2, "0")} — swipe to shuffle · tap to open`;
+  }
+  /* filters + mode switch */
+  let currentCat = "all";
+  function rebuildGallery(cat, animated) {
+    currentCat = cat;
+    const useDeck = MOBILE;
+    qs("#cyl-stage").style.display = useDeck ? "none" : "";
+    qs("#cyl-hint").style.display = useDeck ? "none" : "";
+    qs(".cyl-nav").style.display = useDeck ? "none" : "";
+    qs("#deck-stage").hidden = !useDeck;
+    qs("#deck-count").hidden = !useDeck;
+    const target = useDeck ? qs("#deck-stage") : qs("#cyl-ring");
+    const build = () => { useDeck ? buildDeck(cat) : buildCylinder(cat); };
+    if (animated && HAS_GSAP && !REDUCED) {
+      gsap.to(target, {
+        opacity: 0, scale: .9, rotateY: useDeck ? 0 : 25, duration: .35, ease: "power2.in",
+        onComplete: () => { build(); gsap.fromTo(target, { opacity: 0, scale: .9, rotateY: useDeck ? 0 : -25 }, { opacity: 1, scale: 1, rotateY: 0, duration: .55, ease: "power3.out", clearProps: "opacity,scale,rotate" }); }
+      });
+    } else build();
+  }
+  function initGallery() {
+    qsa(".lf-btn").forEach(btn => btn.addEventListener("click", () => {
+      qsa(".lf-btn").forEach(b => b.setAttribute("aria-pressed", b === btn ? "true" : "false"));
+      rebuildGallery(btn.dataset.filter, true);
+    }));
+    rebuildGallery("all", false);
+    if (!MOBILE) initCylinder();
+  }
+  /* lightbox */
+  let lbIndex = 0, lbLastFocus = null;
+  function openLightbox(i, sourceImg) {
+    lbIndex = i; lbLastFocus = document.activeElement;
+    const lb = qs("#lightbox");
+    setLightbox();
+    lb.classList.add("open");
+    if (lenis) lenis.stop();
+    document.body.style.overflow = "hidden";
+    if (HAS_GSAP && !REDUCED && sourceImg) { // FLIP expand
+      const r1 = sourceImg.getBoundingClientRect();
+      const ghost = sourceImg.cloneNode();
+      ghost.style.cssText = `position:fixed;z-index:330;object-fit:cover;pointer-events:none;top:${r1.top}px;left:${r1.left}px;width:${r1.width}px;height:${r1.height}px`;
+      document.body.appendChild(ghost);
+      const img = qs("#lb-img");
+      gsap.set(img, { opacity: 0 });
+      let done = false;
+      const doFlip = () => {
+        if (done) return; done = true;
+        const r2 = img.getBoundingClientRect();
+        gsap.to(ghost, {
+          top: r2.top, left: r2.left, width: r2.width, height: r2.height, duration: .6, ease: "power4.inOut",
+          onComplete: () => { gsap.set(img, { opacity: 1 }); ghost.remove(); }
+        });
+      };
+      // measure only once the large image has laid out; bail out gracefully if it stalls
+      if (img.complete && img.naturalWidth) requestAnimationFrame(doFlip);
+      else img.addEventListener("load", () => requestAnimationFrame(doFlip), { once: true });
+      setTimeout(() => { if (!done) { done = true; gsap.set(img, { opacity: 1 }); ghost.remove(); } }, 1500);
+    }
+    qs("#lb-close").focus();
+  }
+  function setLightbox() {
+    const g = lens.filtered[lbIndex];
+    const img = qs("#lb-img");
+    img.src = IMG(g.id, 1600);
+    img.alt = g.caption;
+    qs("#lb-cap").textContent = `${String(lbIndex + 1).padStart(2, "0")} / ${String(lens.filtered.length).padStart(2, "0")} — ${g.caption}`;
+  }
+  function lbNav(dir) {
+    lbIndex = (lbIndex + dir + lens.filtered.length) % lens.filtered.length;
+    const img = qs("#lb-img");
+    if (HAS_GSAP && !REDUCED) gsap.fromTo(img, { opacity: 0, x: dir * 36 }, { opacity: 1, x: 0, duration: .45, ease: "power3.out" });
+    setLightbox();
+  }
+  function closeLightbox() {
+    qs("#lightbox").classList.remove("open");
+    document.body.style.overflow = "";
+    if (lenis) lenis.start();
+    if (lbLastFocus) lbLastFocus.focus();
+  }
+  function initLightbox() {
+    qs("#lb-close").addEventListener("click", closeLightbox);
+    qs("#lb-prev").addEventListener("click", () => lbNav(-1));
+    qs("#lb-next").addEventListener("click", () => lbNav(1));
+    document.addEventListener("keydown", e => {
+      const open = qs("#lightbox").classList.contains("open");
+      if (!open) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") lbNav(-1);
+      if (e.key === "ArrowRight") lbNav(1);
+      if (e.key === "Tab") { // simple trap between the 3 buttons
+        const f = [qs("#lb-close"), qs("#lb-prev"), qs("#lb-next")];
+        const idx = f.indexOf(document.activeElement);
+        if (e.shiftKey && idx <= 0) { f[f.length - 1].focus(); e.preventDefault(); }
+        else if (!e.shiftKey && idx === f.length - 1) { f[0].focus(); e.preventDefault(); }
+      }
+    });
+    // swipe navigation
+    let sx = null;
+    const lb = qs("#lightbox");
+    lb.addEventListener("pointerdown", e => sx = e.clientX);
+    lb.addEventListener("pointerup", e => {
+      if (sx === null) return;
+      const dx = e.clientX - sx; sx = null;
+      if (Math.abs(dx) > 50) lbNav(dx < 0 ? 1 : -1);
+    });
+    lb.addEventListener("click", e => { if (e.target === lb) closeLightbox(); });
+  }
+
+  /* ------------------------------------------------------------------
+     07 · TESTIMONIALS — 3D stack, drag-to-throw, auto-advance
+  ------------------------------------------------------------------ */
+  function initTestimonials() {
+    const stage = qs("#testi-stage");
+    const list = SHOW_SAMPLE_TESTIMONIALS ? ARCHITECT.testimonials : ARCHITECT.testimonials.filter(t => !t.sample);
+    if (!list.length) return;
+    stage.innerHTML = list.map((t, i) => `
+      <article class="t-card" data-i="${i}">
+        <blockquote>“${t.quote}”</blockquote>
+        <div class="t-meta">
+          <div><strong>${t.name}</strong><span>${t.project} · ${t.location}</span></div>
+          ${t.sample ? '<span class="t-sample">SAMPLE — replace with a real client review</span>' : ""}
+        </div>
+      </article>`).join("");
+    let order = list.map((_, i) => i);
+    const cards = i => stage.querySelector(`[data-i="${i}"]`);
+    function paint(animated) {
+      order.forEach((idx, pos) => {
+        const el = cards(idx), p = Math.min(pos, 3);
+        const props = { zIndex: 50 - pos, y: p * 16, z: -p * 70, rotate: p % 2 ? 1.5 : -1, opacity: pos > 3 ? 0 : 1, x: 0 };
+        if (HAS_GSAP && !REDUCED && animated) gsap.to(el, { ...props, duration: .7, ease: "power3.out" });
+        else { el.style.zIndex = props.zIndex; el.style.opacity = props.opacity; el.style.transform = `translate3d(0,${props.y}px,${props.z}px) rotate(${props.rotate}deg)`; }
+      });
+    }
+    paint(false);
+    function advance() {
+      const topEl = cards(order[0]);
+      if (HAS_GSAP && !REDUCED) {
+        gsap.to(topEl, { x: 300, rotate: 10, opacity: 0, duration: .55, ease: "power2.in", onComplete: () => { order.push(order.shift()); paint(true); } });
+      } else { order.push(order.shift()); paint(false); }
+    }
+    // auto-advance, paused on hover / while dragging
+    let paused = false, dragging = false;
+    stage.addEventListener("pointerenter", () => paused = true);
+    stage.addEventListener("pointerleave", () => paused = false);
+    if (!REDUCED) setInterval(() => { if (!paused && !dragging) advance(); }, 6000);
+    // drag to throw
+    let sx = 0, topEl = null;
+    stage.addEventListener("pointerdown", e => {
+      topEl = cards(order[0]); dragging = true; sx = e.clientX;
+      stage.setPointerCapture(e.pointerId);
+    });
+    stage.addEventListener("pointermove", e => {
+      if (!dragging || !topEl || !HAS_GSAP) return;
+      const dx = e.clientX - sx;
+      gsap.set(topEl, { x: dx, rotate: dx * .04 });
+    });
+    const release = e => {
+      if (!dragging || !topEl) return;
+      dragging = false;
+      const dx = e.clientX - sx;
+      if (Math.abs(dx) > 90 && HAS_GSAP && !REDUCED) {
+        gsap.to(topEl, { x: Math.sign(dx) * 460, rotate: Math.sign(dx) * 14, opacity: 0, duration: .45, ease: "power2.in", onComplete: () => { order.push(order.shift()); paint(true); } });
+      } else paint(true);
+      topEl = null;
+    };
+    stage.addEventListener("pointerup", release);
+    stage.addEventListener("pointercancel", release);
+  }
+
+  /* ------------------------------------------------------------------
+     BOOT
+  ------------------------------------------------------------------ */
+  render();
+  initLenis();
+  initCursor();
+  initNav();
+  initTransitions();
+  initMagnetic();
+  initContact();
+  initPlaques();
+  initGallery();
+  initLightbox();
+  initTestimonials();
+  initScrollFX();
+  initJourney();
+  initWordCycle();
+  initTilt();
+  initHero3D();
+  initEntry(instant => heroIntro(instant));
+  addEventListener("load", () => { if (HAS_GSAP) ScrollTrigger.refresh(); });
+})();
+</script>
+<noscript>
+  <style>.preloader,.cursor-layer,.wipe{display:none !important}</style>
+  <p style="padding:16px;font-family:monospace">JavaScript is disabled — content shown without animations.</p>
+</noscript>
+</body>
+</html>
